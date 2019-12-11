@@ -216,6 +216,167 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "GET Only One Character String Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/vacancies?text=\"а\"",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"vacancies"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "\"а\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 100-Characters String Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/vacancies?text=\"PSMCgRs>04I(q\"zv.@s2pPu&=<8W~S4Du&06ru%W2{$\"|nqkza`$*tN|ne5p(0,_\"+ySNkuf%aZsMV_5:chLAzmqvaii}I~YTp;>\"",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"vacancies"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "\"PSMCgRs>04I(q\"zv.@s2pPu"
+						},
+						{
+							"key": "",
+							"value": "<8W~S4Du"
+						},
+						{
+							"key": "06ru%W2{$\"|nqkza`$*tN|ne5p(0,_\"+ySNkuf%aZsMV_5:chLAzmqvaii}I~YTp;>\"",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 200-Characters String Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/vacancies?text=\"n0j#/T<a7[gUQqnfPYZ,U-$d8oOX\"X#}.R%Xf$v[lcu[bF69UF\"G8$Q`FICS{p=a4nSI`>%1)5@Csk*0u}eF9JomIy}f*$LwgEU,l^KZHa}0<a!^b3anwP#@h:Grf9<|MJ~fi$|kq3pDSA8^JAj9y;OaQtzP.g(hTo!lB~fqG){=NS*$lD=6$rH|]UUJ=m!M5Y</1$\"r\"",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"vacancies"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "\"n0j"
+						}
+					],
+					"hash": "/T<a7[gUQqnfPYZ,U-$d8oOX\"X#}.R%Xf$v[lcu[bF69UF\"G8$Q`FICS{p=a4nSI`>%1)5@Csk*0u}eF9JomIy}f*$LwgEU,l^KZHa}0<a!^b3anwP#@h:Grf9<|MJ~fi$|kq3pDSA8^JAj9y;OaQtzP.g(hTo!lB~fqG){=NS*$lD=6$rH|]UUJ=m!M5Y</1$\"r\""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 500-Characters String Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/vacancies?text=\"d?Y2y.+yFq0&6Nso6!w'5T,A~pZpeCqqtX6z.FzbyBE%pcK-M0/q4T!{MA!.IBns&w>-qiF2se'[n_cTc;;ol=>4hWCDSM|%3FNFV[sQ\"v61QJkd(*)SVjW*4L*72QesOYxsY*nE>8uUGJ[@?26<\"ta`~wA}N..-[L%H?nc(A#AZN<^&G,?(E6L\"&yMd-%we0X;jp=NDm[![W?RftU#+XqVmj'dHtw8;'H?)z))|b$OnhqvYx:AM2QpraBpc,-$w,enB.&$]cu6LR_(S/W%4bbKgx_CQgAb^G0-32:9,FbofHgJE;=c\"TV~8HR,6$3Ty?(XxDFyj;4JIdhIjB/8_v_K;StbUW9y81kmZz&erXO[AR*kU.}u[2/sf|)at/rih[Y]')[b#6&A7n1N$Ohy\"tXo3Q'q\"Sp^=39k+[0sJc*:pR!S=J^?PODS[I(:Y1kSD'5J+>x9_:Vd=I^|%+Fz(<exfu[?(E(HO&]sB;-oCei(#$@b=8EWI\"",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"vacancies"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "\"d?Y2y.+yFq0"
+						},
+						{
+							"key": "6Nso6!w'5T,A~pZpeCqqtX6z.FzbyBE%pcK-M0/q4T!{MA!.IBns",
+							"value": null
+						},
+						{
+							"key": "w>-qiF2se'[n_cTc;;ol",
+							"value": ">4hWCDSM|%3FNFV[sQ\"v61QJkd(*)SVjW*4L*72QesOYxsY*nE>8uUGJ[@?26<\"ta`~wA}N..-[L%H?nc(A"
+						}
+					],
+					"hash": "AZN<^&G,?(E6L\"&yMd-%we0X;jp=NDm[![W?RftU#+XqVmj'dHtw8;'H?)z))|b$OnhqvYx:AM2QpraBpc,-$w,enB.&$]cu6LR_(S/W%4bbKgx_CQgAb^G0-32:9,FbofHgJE;=c\"TV~8HR,6$3Ty?(XxDFyj;4JIdhIjB/8_v_K;StbUW9y81kmZz&erXO[AR*kU.}u[2/sf|)at/rih[Y]')[b#6&A7n1N$Ohy\"tXo3Q'q\"Sp^=39k+[0sJc*:pR!S=J^?PODS[I(:Y1kSD'5J+>x9_:Vd=I^|%+Fz(<exfu[?(E(HO&]sB;-oCei(#$@b=8EWI\""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 1000-Characters String Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/vacancies?text=\"jl!aHPU9%c{yAM'85fyWVP^TK`j)v'!RpB`t,gbaOQeJH,'Oy0]R7'n8*D;sC;khkIW,'3d)1&z&_}l.;,d5^v,^r:y>p2A`,q;fT!F*Gw[:XC@LGx=6/{[AOWW[<+_LIdKMG:36(~()fjf.SXp@Q`1xYx{T;^e2EA57@Y=;6P/+rb}LYk;C368v7FdFA{g+z*(\"@&(dEe6V[TcRX/[]].F\"yC1?Xm99;F^lSb@k>e}pN9Kd{,A/_7o'!~bbY\"=Qn\"SqxP9ySC'-V4SlU$hn4pm=;C>(;Jj:Y^+(}v3@P];DnwVh[8V?}zdq#uaz*spd@w7[<6H5@SWWL|}5T!|Rrp7'.*OQZ_Qvv1KoE%*6#,u{U@1s#D17iYSRvd3+-u\"t~;Ad2>,_:'Ki2LB5.RD'-0M0)5yXkuH+Ve1O/VKr56M+k?4zgo5od_1&~CCmq7Vr,HQf,m?u$?kHQlh%ZTu>,Z=o}5U!K(v0c7+5a`NsRZ-ok5s@!Y4qvMTRSMyuog1</{Y)KKS|{eW3WTcnucRH'(eN1]1QaB:|UGPujt9qihNBuo3aki8%a`siP:xf-Gx|,Dh|LeZmT6p=ET~8d}('hMxtq\"-B'ac#X\"HCq[D5n!,h|a?bSnwZ^#!*BN}<I^{U<z+!rdF|Uh36ahQe]d[\"l~nt;Y3n:HbYQW\"!d0h{DrUL/&8sB%83OZm3;tTRAywC;txg$<}ImR((PVO^6^/;Dc3zFnxbFu//3o1vwi:z)MJ]|WTw76`|d)9|9Iyr}=-%7[daq_$a`)/y%R*]%PII5WbsfwYo>S?1%ZWHc0{HoXlN1>STxj,=wS$R!=r[d3p>kW9#&B6GTsu6[$^(Gmu{Ir&8<{5kwU$Z;PT_k`^Q)Yy8TrFXw4-/10a-;ydWk_K,1s/L>ssH:;a+]'#pd*hmn)N/A;:)WH_A\"s^rmjP2DYINfw(&dLMq\"A4oeCL=(QY`ymL>\"vY~U#{eFbzT|/g@L6FP*g//ag7}^?LB|gG^\"",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"vacancies"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "\"jl!aHPU9%c{yAM'85fyWVP^TK`j)v'!RpB`t,gbaOQeJH,'Oy0]R7'n8*D;sC;khkIW,'3d)1"
+						},
+						{
+							"key": "z",
+							"value": null
+						},
+						{
+							"key": "_}l.;,d5^v,^r:y>p2A`,q;fT!F*Gw[:XC@LGx",
+							"value": "6/{[AOWW[<+_LIdKMG:36(~()fjf.SXp@Q`1xYx{T;^e2EA57@Y=;6P/+rb}LYk;C368v7FdFA{g+z*(\"@"
+						},
+						{
+							"key": "(dEe6V[TcRX/[]].F\"yC1?Xm99;F^lSb@k>e}pN9Kd{,A/_7o'!~bbY\"",
+							"value": "Qn\"SqxP9ySC'-V4SlU$hn4pm=;C>(;Jj:Y^+(}v3@P];DnwVh[8V?}zdq"
+						}
+					],
+					"hash": "uaz*spd@w7[<6H5@SWWL|}5T!|Rrp7'.*OQZ_Qvv1KoE%*6#,u{U@1s#D17iYSRvd3+-u\"t~;Ad2>,_:'Ki2LB5.RD'-0M0)5yXkuH+Ve1O/VKr56M+k?4zgo5od_1&~CCmq7Vr,HQf,m?u$?kHQlh%ZTu>,Z=o}5U!K(v0c7+5a`NsRZ-ok5s@!Y4qvMTRSMyuog1</{Y)KKS|{eW3WTcnucRH'(eN1]1QaB:|UGPujt9qihNBuo3aki8%a`siP:xf-Gx|,Dh|LeZmT6p=ET~8d}('hMxtq\"-B'ac#X\"HCq[D5n!,h|a?bSnwZ^#!*BN}<I^{U<z+!rdF|Uh36ahQe]d[\"l~nt;Y3n:HbYQW\"!d0h{DrUL/&8sB%83OZm3;tTRAywC;txg$<}ImR((PVO^6^/;Dc3zFnxbFu//3o1vwi:z)MJ]|WTw76`|d)9|9Iyr}=-%7[daq_$a`)/y%R*]%PII5WbsfwYo>S?1%ZWHc0{HoXlN1>STxj,=wS$R!=r[d3p>kW9#&B6GTsu6[$^(Gmu{Ir&8<{5kwU$Z;PT_k`^Q)Yy8TrFXw4-/10a-;ydWk_K,1s/L>ssH:;a+]'#pd*hmn)N/A;:)WH_A\"s^rmjP2DYINfw(&dLMq\"A4oeCL=(QY`ymL>\"vY~U#{eFbzT|/g@L6FP*g//ag7}^?LB|gG^\""
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
