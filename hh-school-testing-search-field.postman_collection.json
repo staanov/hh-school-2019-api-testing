@@ -7,6 +7,45 @@
 	"item": [
 		{
 			"name": "GET Normal Cyrillic Word Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f25a920-bd0b-4b8c-9a45-e9cf8845e2a8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"name contains тестировщик OR qa engineer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"тестировщик\") || name.includes( \"qa engineer\"), name +\" not includes тестировщик\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -33,6 +72,46 @@
 		},
 		{
 			"name": "GET Normal Cyrillic Phrase Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e61b8241-0117-48f2-9cd8-e4b0534cf28d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"",
+							"pm.test(\"name contains оператор call-центра OR its synonyms\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"оператор\") || name.includes( \"колл-центр\") || name.includes(\"call-центр\") || name.includes( \"колл центр\") || name.includes(\"call-центр\"), name +\" not includes оператор call-центра\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -59,6 +138,45 @@
 		},
 		{
 			"name": "GET Normal Latin Word Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9397ee7-416d-4e3c-9204-8f5cf9735e7b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"name contains engineer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"engineer\"), name +\" not includes engineer\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -85,6 +203,45 @@
 		},
 		{
 			"name": "GET Normal Latin Phrase Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bd9dfd1f-4cab-4fef-b8c0-cdf0aae0ec3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"name contains junior java developer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"junior\") || name.includes(\"java\") || name.includes(\"developer\") || name.includes(\"разработчик\"), name +\" not includes junior java developer\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -111,11 +268,47 @@
 		},
 		{
 			"name": "GET Empty String Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "63404f43-b4f0-4442-9fca-36fdbe80025f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is returns 20 recordings\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 20).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=\"\"",
+					"raw": "https://api.hh.ru/vacancies?text='''",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -128,7 +321,7 @@
 					"query": [
 						{
 							"key": "text",
-							"value": "\"\""
+							"value": "'''"
 						}
 					]
 				}
@@ -137,6 +330,42 @@
 		},
 		{
 			"name": "GET Text Only With Special Characters Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a05cdd3-c8aa-4a26-9812-9dc888f69fcf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is returns 20 recordings\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 20).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -163,6 +392,42 @@
 		},
 		{
 			"name": "GET Text Only With Numbers Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e1f2614-4929-4509-b7dc-e8710e2bae06",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is items is null\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 0).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -189,6 +454,42 @@
 		},
 		{
 			"name": "GET Text With Every Possible Type Of Characters Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fe39af3-3644-4dce-94cc-20252e253b76",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is items is null\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 0).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -219,6 +520,45 @@
 		},
 		{
 			"name": "GET Only One Character String Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee50d9de-fbbc-427d-9d2f-01ef78afeab0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"name contains а\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"а\") || jsonData.items.length === 20, name +\" not includes а\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -244,68 +584,43 @@
 			"response": []
 		},
 		{
-			"name": "GET 100-Characters String Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=PSMCgRs>04I(q\"zv.@s2pPu&=<8W~S4Du&06ru%W2{$\"|nqkza`$*tN|ne5p(0,_\"+ySNkuf%aZsMV_5:chLAzmqvaii}I~YTp;>",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "PSMCgRs>04I(q\"zv.@s2pPu"
-						},
-						{
-							"key": "",
-							"value": "<8W~S4Du"
-						},
-						{
-							"key": "06ru%W2{$\"|nqkza`$*tN|ne5p(0,_\"+ySNkuf%aZsMV_5:chLAzmqvaii}I~YTp;>",
-							"value": null
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET 200-Characters String Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=n0j#/T<a7[gUQqnfPYZ,U-$d8oOX\"X#}.R%Xf$v[lcu[bF69UF\"G8$Q`FICS{p=a4nSI`>%1)5@Csk*0u}eF9JomIy}f*$LwgEU,l^KZHa}0<a!^b3anwP#@h:Grf9<|MJ~fi$|kq3pDSA8^JAj9y;OaQtzP.g(hTo!lB~fqG){=NS*$lD=6$rH|]UUJ=m!M5Y</1$\"r",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "n0j"
-						}
-					],
-					"hash": "/T<a7[gUQqnfPYZ,U-$d8oOX\"X#}.R%Xf$v[lcu[bF69UF\"G8$Q`FICS{p=a4nSI`>%1)5@Csk*0u}eF9JomIy}f*$LwgEU,l^KZHa}0<a!^b3anwP#@h:Grf9<|MJ~fi$|kq3pDSA8^JAj9y;OaQtzP.g(hTo!lB~fqG){=NS*$lD=6$rH|]UUJ=m!M5Y</1$\"r"
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "GET 500-Characters String Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "059ed7fc-0249-4d19-980c-332eaceb0607",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is items is null\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 0).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -341,6 +656,42 @@
 		},
 		{
 			"name": "GET 1000-Characters String Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c15e22e-3450-4c3d-a811-bbf3bd737807",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is items is null\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 0).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -380,6 +731,42 @@
 		},
 		{
 			"name": "GET 10000-Characters String Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "480679c7-838a-4b82-9bfc-0e477c9cea3d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is items is null\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 0).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -406,189 +793,46 @@
 			"response": []
 		},
 		{
-			"name": "GET Simple SQL Injection Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=SELECT search_field FROM vacancies",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "SELECT search_field FROM vacancies"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET LoSR Basic Opportunities Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=Продажа оборудования",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "Продажа оборудования"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET LoSR Phrase Search Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=\"Продажа оборудования\"",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "\"Продажа оборудования\""
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET LoSR Forms of Words Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=Продажи",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "Продажи"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET LoSR Accurate Word Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=!Продажи",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "!Продажи"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET LoSR Fragments Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=Гео*",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "Гео*"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET LoSR Synonyms Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=PR-менеджер",
-					"protocol": "https",
-					"host": [
-						"api",
-						"hh",
-						"ru"
-					],
-					"path": [
-						"vacancies"
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": "PR-менеджер"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "GET text1 OR text2 Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fb4f3ce-1e9c-4581-82d5-56cbe1fce212",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"name contains инженер OR программист\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"инженер\") || name.includes( \"программист\"), name +\" not includes инженер OR программист\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -615,6 +859,45 @@
 		},
 		{
 			"name": "GET text1 AND text2 Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "85f98fbf-1830-49ad-96cf-b6029ff42333",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"name contains инженер AND программист\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"инженер\") && name.includes( \"программист\"), name +\" not includes инженер AND программист\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -641,6 +924,45 @@
 		},
 		{
 			"name": "GET text1 NOT text2 Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b661da0a-32ed-42b2-ad42-8f782f5da9da",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"name contains программист AND NOT инженер\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name.includes(\"программист\") && !name.includes(\"инженер\"), name +\" not includes программист OR includes инженер\").to.be.true;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -666,12 +988,48 @@
 			"response": []
 		},
 		{
-			"name": "GET Drop Table Attempt Request",
+			"name": "GET SQL Full-Text Search Attempt Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "75c493a0-4a9f-4350-a107-85ec7ba6340f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function () {",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^application\\/json/i);",
+							"});",
+							"",
+							"pm.test(\"is items an array\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items).to.be.an('array'); ",
+							"});",
+							"",
+							"pm.test(\"is name a string\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    for(var i =0; i < jsonData.items.length; i++) {",
+							"        var name = jsonData.items[i].name.toLowerCase();",
+							"        pm.expect(name).to.be.a('string'); ",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"is items is null\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items.length === 0).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.hh.ru/vacancies?text=DROP TABLE vacancies",
+					"raw": "https://api.hh.ru/vacancies?text=SELECT to_tsquery('russian', 'инженер-программист');",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -684,12 +1042,34 @@
 					"query": [
 						{
 							"key": "text",
-							"value": "DROP TABLE vacancies"
+							"value": "SELECT to_tsquery('russian', 'инженер-программист');"
 						}
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7f4727ac-ea32-492f-b2ed-3d7db0429d27",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "dae724e8-a254-4ce7-b8b3-507a098bc9d4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}
